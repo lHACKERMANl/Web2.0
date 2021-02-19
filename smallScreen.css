@@ -1,17 +1,16 @@
-@media only screen 
-and (min-device-width : 320px) 
-and (max-device-width : 667px){
+@media only screen and (max-width: 896px) and (min-width : 320px) {
     body{
         position: absolute;
-        top: 113%;
+        top: 240%;
         left: 50%;
         margin-right: -50%;
         transform: translate(-50%, -50%);
         margin-left: 50px;
     }
+    
     .grid{
         display: grid;
-        grid-template-columns: 1fr;
+        grid-template-columns: 100%;
         grid-column-gap: 10px;
         grid-row-gap: 1em;
     }
@@ -19,14 +18,19 @@ and (max-device-width : 667px){
     .weatherBlock{
         display: grid;
         grid-template-columns: 50% 50%;
-        width: 1000px;
+        width: 100%;
         background-color: #a7afb1;
         font-family: "Roboto";
         color: white;
         margin-bottom: 10px;
-        height: 100px;
+        height: 100%;
         margin-right: 55px;
         font-size: 45pt;
+    }
+
+    .weatherData{
+        margin: 0;
+        padding: 0;
     }
 
     .p1{
@@ -50,7 +54,7 @@ and (max-device-width : 667px){
 
     .hat{
         display: grid;
-        grid-template-columns: 250px 125px 450px 125px;
+        grid-template-columns: 250px 125px auto auto;
         grid-column-gap: 20px;
     }
 
@@ -61,8 +65,8 @@ and (max-device-width : 667px){
     }
 
     .imgClassBig{
-        height: 350px;
-        width: 350px;
+        height: 200px;
+        width: 200px;
         margin-top: 25px;
         float: left;
     }
@@ -94,21 +98,21 @@ and (max-device-width : 667px){
     }
 
     .PforCity{
-        text-align: left;
-        padding-left: 15px;
-        margin-right: 50px;
-        color: #c7ccce;
+
+        margin-left: 0px;
+        padding-left: 0px;
+    
     }
 
     .rghtCentringToRight{
-        justify-self: right;
+        justify-self: left;
         height: 160px;
-        width: 1000px;
+        width: 75%;
         background-color: #f1f1f1;
-        margin-right: 30px;
+        margin-left: 15px;
         margin-top: 15px; 
         margin-bottom: 15px;
-        font-size: 48pt;
+        font-size: 12pt;
     
         display: grid;
         grid-template-columns: 75% 25%;
@@ -135,8 +139,28 @@ and (max-device-width : 667px){
         background-color: #f1f1f1; 
         padding-top: 35px;
         height: 70px;
-        width: 700px;
-        font-size: 45pt;
+        width: 370px;
+        font-size: 24pt;
         resize: none; 
     }
+}
+
+.butDesign{
+    /*display: none;*/
+}
+
+.butDesignSmall{
+    /*display: block;*/
+    border-radius: 7px;
+    color: #8e999f;
+    border: 0ch;
+    background-color: #c9d2d7;
+    height: 55px;
+    width: 100px;
+    margin-top: 20px;
+}
+
+.butDesignSmall > img{
+    height: 50px;
+    width: 50px;
 }
