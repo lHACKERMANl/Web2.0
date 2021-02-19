@@ -1,12 +1,4 @@
 @media only screen and (max-width: 896px) and (min-width : 320px) {
-    body{
-        position: absolute;
-        top: 240%;
-        left: 50%;
-        margin-right: -50%;
-        transform: translate(-50%, -50%);
-        margin-left: 50px;
-    }
     
     .grid{
         display: grid;
