@@ -1,0 +1,72 @@
+.rghtCentringToRight{
+    /*justify-self: right;*/
+    height: 40px;
+    width: 300px;
+    background-color: #f1f1f1;
+    margin-right: 60px;
+    margin-top: 15px;
+
+    display: grid;
+    grid-template-columns: 300px 100px;
+}
+
+.PforCity{
+    text-align: left;
+    padding-top: 10px;
+    padding-left: 15px;
+    margin-right: 50px;
+    color: #c7ccce;
+}
+
+.imgPlus{
+    height: 30px;
+    width: 30px;
+    margin-top: 5px;
+    margin-left: 5px;
+}
+
+.hat{
+    display: grid;
+    grid-template-columns: 125px 75px 75px 75px;
+    grid-column-gap: 20px;
+}
+
+.CityStyle{
+    padding-bottom: 15px;
+}
+
+.tempPsmall{
+    font-size: 32pt;
+    font-family: "Roboto";
+    color: #8e999f;
+}
+
+.imgClassSmall{
+    height: 40px;
+    width: 40px;
+}
+
+button{
+    color: white;
+    background-color: white;
+    margin: 0em;
+    padding: 0px 0px;
+    border-width: 0px;
+    border-color: white;
+}
+
+.imgExit{
+    height: 30px;
+    width: 30px;
+    margin-top: 5px;
+    margin-left: 5px;
+    transform: rotate(45deg);
+}
+
+textarea{
+    border: 0px;
+    background-color: #f1f1f1; 
+    height: 15px;
+    width: 150px;
+    resize: none; 
+}

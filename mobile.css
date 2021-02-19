@@ -1,0 +1,120 @@
+@media only screen 
+and (min-device-width : 320px) 
+and (max-device-width : 667px){
+    .grid{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-column-gap: 10px;
+        grid-row-gap: 1em;
+    }
+
+    .weatherBlock{
+        display: grid;
+        grid-template-columns: 50% 50%;
+        width: 1000px;
+        background-color: #a7afb1;
+        font-family: "Roboto";
+        color: white;
+        margin-bottom: 10px;
+        height: 100px;
+        margin-right: 55px;
+        font-size: 45pt;
+    }
+
+    .p1{
+        margin-left: 10px;
+        margin-top: 5px;
+    }
+    
+    .p2{
+        text-align: right;
+        margin-right: 5px;
+        color:#e0e8eb;
+        margin-top: 5px;
+        margin-right: 10px;
+    }
+
+    h2{
+        font-family: "Roboto";
+        font-size: 48pt;
+        color: #8e999f;
+    }
+
+    .hat{
+        display: grid;
+        grid-template-columns: 250px 125px 450px 125px;
+        grid-column-gap: 20px;
+    }
+
+    .tempPsmall{
+        font-size: 52pt;
+        font-family: "Roboto";
+        color: #8e999f;
+    }
+
+    .imgClassSmall{
+        height: 80px;
+        width: 80px;
+    }
+
+    .imgExit{
+        height: 60px;
+        width: 60px;
+        margin-top: 5px;
+        margin-left: 5px;
+        transform: rotate(45deg);
+    }
+
+    .h1New{
+        color: #899192;
+        font-size: 48pt;
+        width: 400px;
+    }
+
+    .PforCity{
+        text-align: left;
+        padding-left: 15px;
+        margin-right: 50px;
+        color: #c7ccce;
+    }
+
+    .rghtCentringToRight{
+        justify-self: right;
+        height: 160px;
+        width: 1000px;
+        background-color: #f1f1f1;
+        margin-right: 30px;
+        margin-top: 15px; 
+        margin-bottom: 15px;
+        font-size: 48pt;
+    
+        display: grid;
+        grid-template-columns: 75% 25%;
+    }
+
+    .imgPlus{
+        height: 90px;
+        width: 90px;
+        margin-top: 5px;
+        margin-left: 5px;
+    }
+    .butDesign{
+        border-radius: 7px;
+        color: #8e999f;
+        border: 0ch;
+        background-color: #c9d2d7;
+        height: 80px;
+        width: 500px;
+        font-size: 36pt;
+        margin-top: 20px;
+    }
+    textarea{
+        border: 0px;
+        background-color: #f1f1f1; 
+        padding-top: 35px;
+        height: 70px;
+        width: 700px;
+        font-size: 45pt;
+        resize: none; 
+    }
+}

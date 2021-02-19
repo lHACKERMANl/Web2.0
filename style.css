@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+body{
+    margin-left: 20px;
+}
+
+.h1New{
+    color: #899192;
+    font-size: 42pt;
+}
+
+h2{
+    font-family: "Roboto";
+    font-size: 24pt;
+    color: #8e999f;
+}
+
+.hr{
+    display: inline;
+}
+
+.butDesign{
+    border-radius: 7px;
+    color: #8e999f;
+    border: 0ch;
+    background-color: #c9d2d7;
+    height: 40px;
+    width: 200px;
+    margin-top: 20px;
+}
+
+.wrapper{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.imgClassBig{
+    height: 100px;
+    width: 100px;
+    margin-top: 25px;
+    float: left;
+}
+
+.tempP{
+    font-size: 74pt;
+    font-family: "Roboto";
+    color: #8e999f;
+    margin-left: 150px;
+}
+
+.weatherData{
+    /*float: right;*/
+}
+
+.grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 10px;
+    grid-row-gap: 1em;
+}
+
+.weatherBlock{
+    display: grid;
+    grid-template-columns: 50% 50%;
+    width: 400px;
+    background-color: #a7afb1;
+    font-family: "Roboto";
+    color: white;
+    margin-bottom: 10px;
+    height: 30px;
+    margin-right: 55px;
+}
+
+.p1{
+    margin-left: 10px;
+    margin-top: 5px;
+}
+
+.p2{
+    text-align: right;
+    margin-right: 5px;
+    color:#e0e8eb;
+    margin-top: 5px;
+    margin-right: 10px;
+}
+
+.grid > div{
+    /*background-color: red;*/
+}
+
