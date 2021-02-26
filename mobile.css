@@ -44,6 +44,7 @@ and (max-device-width : 667px){
         display: grid;
         grid-template-columns: 250px 125px 450px 125px;
         grid-column-gap: 20px;
+        height: 200px;
     }
 
     .tempPsmall{
@@ -63,6 +64,9 @@ and (max-device-width : 667px){
         font-size: 163pt;
         font-family: "Roboto";
         color: #8e999f;
+
+        position: absolute;
+        left: 275px;
     }
     
 
@@ -109,8 +113,9 @@ and (max-device-width : 667px){
     .imgPlus{
         height: 90px;
         width: 90px;
-        margin-top: 5px;
+        margin-top: 80px;
         margin-left: 5px;
+        border: 0px
     }
     .butDesign{
         border-radius: 7px;
