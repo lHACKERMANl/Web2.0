@@ -50,10 +50,11 @@ h2{
     font-family: "Roboto";
     color: #8e999f;
     margin-left: 150px;
+    margin-top: 40px;
 }
 
 .weatherData{
-    /*float: right;*/
+    padding-left: 0px;
 }
 
 .grid{

@@ -3,8 +3,8 @@
     height: 40px;
     width: 300px;
     background-color: #f1f1f1;
-    margin-right: 60px;
-    margin-top: 15px;
+
+    align-content:center;
 
     display: grid;
     grid-template-columns: 300px 100px;
@@ -29,10 +29,11 @@
     display: grid;
     grid-template-columns: 125px 75px 75px 75px;
     grid-column-gap: 20px;
+    height: 100px;
 }
 
 .CityStyle{
-    padding-bottom: 15px;
+    align-self: center;
 }
 
 .tempPsmall{
@@ -44,6 +45,7 @@
 .imgClassSmall{
     height: 40px;
     width: 40px;
+    align-self: center;
 }
 
 button{
@@ -53,20 +55,25 @@ button{
     padding: 0px 0px;
     border-width: 0px;
     border-color: white;
+    height: 50px;
 }
 
 .imgExit{
+    padding-top: 60px;
     height: 30px;
     width: 30px;
-    margin-top: 5px;
-    margin-left: 5px;
     transform: rotate(45deg);
+    
 }
 
 textarea{
     border: 0px;
     background-color: #f1f1f1; 
-    height: 15px;
+    height: 20px;
     width: 150px;
     resize: none; 
+}
+
+li {
+    list-style-type: none
 }
