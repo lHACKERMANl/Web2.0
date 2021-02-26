@@ -15,7 +15,6 @@ body{
 }
 
 h2{
-    font-family: "Roboto";
     font-size: 24pt;
     color: #8e999f;
 }
@@ -81,6 +80,13 @@ h2{
 .p1{
     margin-left: 10px;
     margin-top: 5px;
+}
+
+
+h3{
+    font-family: "Roboto";
+    font-size: 24pt;
+    color: #8e999f;
 }
 
 .p2{
