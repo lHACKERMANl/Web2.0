@@ -42,6 +42,7 @@
     font-size: 32pt;
     font-family: "Roboto";
     color: #8e999f;
+    align-self:center;
 }
 
 .imgClassSmall{
@@ -61,11 +62,11 @@ button{
 }
 
 .imgExit{
-    padding-top: 60px;
     height: 30px;
     width: 30px;
     transform: rotate(45deg);
     
+    padding-top: 42px;
 }
 
 textarea{

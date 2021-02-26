@@ -37,6 +37,8 @@ h2{
 .wrapper{
     display: grid;
     grid-template-columns: 1fr 2fr;
+    margin-bottom: 50px;
+
 }
 
 .imgClassBig{
@@ -56,6 +58,7 @@ h2{
 
 .weatherData{
     padding-left: 0px;
+    margin-top: 32px;
 }
 
 .grid{

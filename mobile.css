@@ -1,5 +1,5 @@
 @media only screen 
-and (min-device-width : 320px) 
+and (min-device-width : 315px) 
 and (max-device-width : 667px){
     .grid{
         display: grid;
@@ -19,6 +19,7 @@ and (max-device-width : 667px){
         height: 100px;
         margin-right: 55px;
         font-size: 45pt;
+        margin-top: 0px;
     }
 
     .p1{
@@ -32,6 +33,10 @@ and (max-device-width : 667px){
         color:#e0e8eb;
         margin-top: 5px;
         margin-right: 10px;
+    }
+
+    .wrapper{
+        margin-bottom: 0px;
     }
 
     h2{
