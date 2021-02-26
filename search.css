@@ -6,6 +6,8 @@
 
     align-content:center;
 
+    align-self:center;
+
     display: grid;
     grid-template-columns: 300px 100px;
 }
