@@ -1,13 +1,17 @@
 @media only screen and (max-width:970px) and (min-width : 310px) {
 
     body{
-        margin-left: 0px;
+        margin-left: 25px;
         position:relative;
         top: 0%;
         left: 0%;
         height: 0px;
-        margin-right: 0px;
+        margin-right: 25px;
         transform: none;
+    }
+
+    input[type="text"]{
+        font-size: x-small;
     }
 
     .grid{
@@ -83,7 +87,7 @@
     }
     
     .tempP{
-        font-size: 89pt;
+        font-size: 56pt;
         font-family: "Roboto";
         color: #8e999f;
     }
