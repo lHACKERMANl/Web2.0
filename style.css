@@ -10,7 +10,7 @@ body{
     height: 100px;
     margin-right: -50%;
     transform: translate(-50%, -50%);
-    margin-left: 50px;
+    /*margin-left: 50px;*/
 }
 .h1New{
     color: #899192;
@@ -56,8 +56,9 @@ h2{
     font-size: 74pt;
     font-family: "Roboto";
     color: #8e999f;
-    margin-left: 150px;
-    margin-top: 40px;
+    /*margin-left: 150px;
+    margin-top: 40px;*/
+    text-align: end;
 }
 
 .weatherData{
@@ -73,12 +74,13 @@ input[type="text"] {
     -khtml-user-select: none;
     -webkit-user-select: none;
     user-select: none;
+    padding-left: 10px;
 }
 
 .grid{
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-column-gap: 10px;
+    grid-column-gap: 135px;
     grid-row-gap: 1em;
 }
 
@@ -91,7 +93,6 @@ input[type="text"] {
     color: white;
     margin-bottom: 10px;
     height: 30px;
-    margin-right: 55px;
 }
 
 .p1{
@@ -120,4 +121,8 @@ h3{
 
 .butDesignSmall{
     display: none;
+}
+
+.supreme{
+    align-self: center;
 }

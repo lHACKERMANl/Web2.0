@@ -1,6 +1,16 @@
 @media only screen 
 and (min-device-width : 310px) 
 and (max-device-width : 667px){
+
+    body{
+        position:relative;
+        top: 0%;
+        left: 0%;
+        height: 0px;
+        margin-right: 0px;
+        transform: none;
+    }
+
     .grid{
         display: grid;
         grid-template-columns: 1fr;
@@ -71,7 +81,11 @@ and (max-device-width : 667px){
         color: #8e999f;
 
         position: absolute;
-        left: 275px;
+        left: 460px;
+    }
+
+    h3{
+        font-size: 45pt;
     }
     
 
@@ -109,7 +123,6 @@ and (max-device-width : 667px){
         justify-self: right;
         height: 160px;
         width: 1000px;
-        background-color: #f1f1f1;
         margin-right: 30px;
         margin-top: 15px; 
         margin-bottom: 15px;
@@ -117,6 +130,7 @@ and (max-device-width : 667px){
     
         display: grid;
         grid-template-columns: 75% 25%;
+        grid-column-gap: 8px;
     }
 
     .imgPlus{
@@ -131,18 +145,18 @@ and (max-device-width : 667px){
         color: #8e999f;
         border: 0ch;
         background-color: #c9d2d7;
-        height: 80px;
+        height: 114px;
         width: 500px;
         font-size: 36pt;
         margin-top: 20px;
     }
-    textarea{
-        border: 0px;
-        background-color: #f1f1f1; 
-        padding-top: 35px;
-        height: 70px;
-        width: 700px;
-        font-size: 45pt;
-        resize: none; 
+    input[type="text"]{
+        font-size: unset;
+    }
+
+    button{
+        font-size: 26pt;
+        width: 90px;
+        height: 90px;
     }
 }
