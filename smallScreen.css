@@ -87,7 +87,7 @@
     }
     
     .tempP{
-        font-size: 56pt;
+        font-size: 45pt;
         font-family: "Roboto";
         color: #8e999f;
     }
@@ -118,6 +118,7 @@
         width: 50px;
         font-size: 26pt;
         border-radius: 63px;
+        justify-self: flex-end;
     }
     
 

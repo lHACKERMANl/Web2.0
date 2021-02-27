@@ -26,7 +26,7 @@ and (max-device-width : 667px){
         font-family: "Roboto";
         color: white;
         margin-bottom: 10px;
-        height: 100px;
+        height: 100%;
         margin-right: 0px;
         font-size: 45pt;
         margin-top: 0px;
@@ -76,12 +76,11 @@ and (max-device-width : 667px){
     }
     
     .tempP{
-        font-size: 163pt;
+        font-size: 142pt;
         font-family: "Roboto";
         color: #8e999f;
+        margin-bottom: 0px;
 
-        position: absolute;
-        left: 460px;
     }
 
     h3{
@@ -158,5 +157,6 @@ and (max-device-width : 667px){
         font-size: 26pt;
         width: 90px;
         height: 90px;
+        justify-self: flex-end;
     }
 }

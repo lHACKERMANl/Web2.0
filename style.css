@@ -35,7 +35,7 @@ h2{
     height: 40px;
     width: 200px;
     margin-top: 20px;
-    margin-left: 25px;
+    margin-left: 70px;
 }
 
 .wrapper{
@@ -46,8 +46,8 @@ h2{
 }
 
 .imgClassBig{
-    height: 100px;
-    width: 100px;
+    height: 165px;
+    width: 165px;
     margin-top: 25px;
     float: left;
 }
@@ -92,7 +92,7 @@ input[type="text"] {
     font-family: "Roboto";
     color: white;
     margin-bottom: 10px;
-    height: 30px;
+    height: 100%;
 }
 
 .p1{
