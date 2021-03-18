@@ -6,20 +6,19 @@
         <link rel="stylesheet" type="text/css" href="mobile.css">
         <link rel="stylesheet" type="text/css" href="smallScreen.css">
     </head>
-    <body>
+    <body onload="autoLoad();">
         <header class="wrapper">
             <div><h1 class="h1New">Погода здесь</h1></div>
-            <div><button class="butDesign">Обновить геолокацию</button></div>
+            <div><button onclick="UpdateLocation()" class="butDesign">Обновить геолокацию</button></div>
         </header>
         <main>
             <div class="grid" id="add_to_me">
                 <div>
                     <h3 class="cur_weather__city"></h3>
 
-                    <div class="imgClassBig"></div> <!--src="https://img.icons8.com/material/96/000000/cloud--v1.png"-->
+                    <div onload="hideLoadingLayer();" id="loading_layer" class="imgClassBig">Loading...</div> <!--src="https://img.icons8.com/material/96/000000/cloud--v1.png"-->
                     <p class="tempP"></p>
                 </div>
-
                 <div>
                     <ul class="weatherData">
                         <li><div class="weatherBlock"><p class="p1">Влажность</p><p class="p2 cur_first"></p></div></li>
@@ -33,21 +32,15 @@
                 <div>
                     <h2 class="h1New">Избранное</h2>
                 </div>
-
                 <div class="rghtCentringToRight">
                         <input type="text" id="new_city" placeholder="Добавить новый город" size="40">
                         <button onclick="addCode()">+</button>                
                     </div>
             </div>
-
             <div class="grid">
-                
             </div>
-
         </main>
         <script type="text/javascript" src="js/newBlock.js"></script>
-        <script type="text/javascript" scr="js/deleteBlock.js"></script>
-        <script type="text/javascript" scr="js/weather.js"></script>
     </body>
 </html>
 
