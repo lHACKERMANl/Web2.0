@@ -46,14 +46,14 @@ h2{
 }
 
 .imgClassBig{
-    height: 165px;
-    width: 165px;
-    margin-top: 25px;
+    /*height: 100%;
+    width: 100%;
+    margin-top: 25px;*/
     float: left;
 }
 
 .tempP{
-    font-size: 74pt;
+    font-size: 45pt;
     font-family: "Roboto";
     color: #8e999f;
     /*margin-left: 150px;
@@ -69,11 +69,6 @@ h2{
 input[type="text"] {
     background-color: #f1f1f1;
     border: 0px;
-    -moz-user-select: -moz-none;
-    -o-user-select: none;
-    -khtml-user-select: none;
-    -webkit-user-select: none;
-    user-select: none;
     padding-left: 10px;
 }
 

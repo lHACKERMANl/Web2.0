@@ -10,24 +10,23 @@
         <header class="wrapper">
             <div><h1 class="h1New">Погода здесь</h1></div>
             <div><button class="butDesign">Обновить геолокацию</button></div>
-            <div><button class="butDesignSmall"><img src="https://www.flaticon.com/svg/vstatic/svg/4245/4245329.svg?token=exp=1613715624~hmac=be74b8729b7931ae497d740244b0e671" alt=""></button></div>
         </header>
         <main>
             <div class="grid" id="add_to_me">
                 <div>
-                    <h3>Saint Petersburg</h3>
+                    <h3 class="cur_weather__city"></h3>
 
-                    <img class="imgClassBig" src="https://img.icons8.com/material/96/000000/cloud--v1.png"></img>
-                    <p class="tempP">-27°C</p>
+                    <div class="imgClassBig"></div> <!--src="https://img.icons8.com/material/96/000000/cloud--v1.png"-->
+                    <p class="tempP"></p>
                 </div>
 
                 <div>
                     <ul class="weatherData">
-                        <li><div class="weatherBlock"><p class="p1">Ветер</p><p class="p2">Modern sans with monreal breath</p></div></li>
-                        <li><div class="weatherBlock"><p class="p1">Облачность</p><p class="p2">Broken cloud</p></div></li>
-                        <li><div class="weatherBlock"><p class="p1">Давление</p><p class="p2">1013 hpa</p></div></li>
-                        <li><div class="weatherBlock"><p class="p1">Влажность</p><p class="p2">52%</p></div></li>
-                        <li><div class="weatherBlock"><p class="p1">Координаты</p><p class="p2">[59.88 , 30.42]</p></div></li>
+                        <li><div class="weatherBlock"><p class="p1">Влажность</p><p class="p2 cur_first"></p></div></li>
+                        <li><div class="weatherBlock"><p class="p1">Скорость ветра</p><p class="p2 wind_speed"></p></div></li>
+                        <li><div class="weatherBlock"><p class="p1">Чувствуется как</p><p class="p2 cur_feels_like"></p></div></li>
+                        <li><div class="weatherBlock"><p class="p1">Давление</p><p class="p2 cur_pressure"></p></div></li>
+                        <li><div class="weatherBlock"><p class="p1">Страна</p><p class="p2 cur_country"></p></div></li>
                     </ul>
                 </div>
 
@@ -36,108 +35,19 @@
                 </div>
 
                 <div class="rghtCentringToRight">
-                        <input type="text" placeholder="Добавить новый город" size="40">
+                        <input type="text" id="new_city" placeholder="Добавить новый город" size="40">
                         <button onclick="addCode()">+</button>                
                     </div>
             </div>
 
             <div class="grid">
-                <div>
-                    <ul class="weatherData">
-                        <div class="hat">
-                            <h3 class="CityStyle">Moscow</h3>
-                            <p class="tempPsmall">8°C</p>
-                            <img class="imgClassSmall" src="https://img.icons8.com/material/96/000000/cloud--v1.png"></img>
-                            <button class="supreme">x</button>
-                        </div>
-                        <li><div class="weatherBlock"><p class="p1">Ветер</p><p class="p2">Modern sans with monreal breath</p></div></li>
-                        <li><div class="weatherBlock"><p class="p1">Облачность</p><p class="p2">Broken cloud</p></div></li>
-                        <li><div class="weatherBlock"><p class="p1">Давление</p><p class="p2">1013 hpa</p></div></li>
-                        <li><div class="weatherBlock"><p class="p1">Влажность</p><p class="p2">52%</p></div></li>
-                        <li><div class="weatherBlock"><p class="p1">Координаты</p><p class="p2">[59.88 , 30.42]</p></div></li>
-                    </ul>
-                </div>
-                <div>
-                    <ul class="weatherData">
-                        <div class="hat">
-                            <h3 class="CityStyle">Moscow</h3>
-                            <p class="tempPsmall">8°C</p>
-                            <img class="imgClassSmall" src="https://img.icons8.com/material/96/000000/cloud--v1.png"></img>
-                            <button class="supreme">x</button>
-                        </div>
-                        <li><div class="weatherBlock"><p class="p1">Ветер</p><p class="p2">Modern</p></div></li>
-                        <li><div class="weatherBlock"><p class="p1">Облачность</p><p class="p2">Broken cloud</p></div></li>
-                        <li><div class="weatherBlock"><p class="p1">Давление</p><p class="p2">1013 hpa</p></div></li>
-                        <li><div class="weatherBlock"><p class="p1">Влажность</p><p class="p2">52%</p></div></li>
-                        <li><div class="weatherBlock"><p class="p1">Координаты</p><p class="p2">[59.88 , 30.42]</p></div></li>
-                    </ul>
-                </div>
-                <div>
-                    <ul class="weatherData">
-                        <div class="hat">
-                            <h3 class="CityStyle">Moscow</h3>
-                            <p class="tempPsmall">8°C</p>
-                            <img class="imgClassSmall" src="https://img.icons8.com/material/96/000000/cloud--v1.png"></img>
-                            <button class="supreme">x</button>
-                        </div>
-                        <li><div class="weatherBlock"><p class="p1">Ветер</p><p class="p2">Modern</p></div></li>
-                        <li><div class="weatherBlock"><p class="p1">Облачность</p><p class="p2">Broken cloud</p></div></li>
-                        <li><div class="weatherBlock"><p class="p1">Давление</p><p class="p2">1013 hpa</p></div></li>
-                        <li><div class="weatherBlock"><p class="p1">Влажность</p><p class="p2">52%</p></div></li>
-                        <li><div class="weatherBlock"><p class="p1">Координаты</p><p class="p2">[59.88 , 30.42]</p></div></li>
-                    </ul>
-                </div>
-                <div>
-                    <ul class="weatherData">
-                        <div class="hat">
-                            <h3 class="CityStyle">Moscow</h3>
-                            <p class="tempPsmall">8°C</p>
-                            <img class="imgClassSmall" src="https://img.icons8.com/material/96/000000/cloud--v1.png"></img>
-                            <button class="supreme">x</button>
-                        </div>
-                        <li><div class="weatherBlock"><p class="p1">Ветер</p><p class="p2">Modern</p></div></li>
-                        <li><div class="weatherBlock"><p class="p1">Облачность</p><p class="p2">Broken cloud</p></div></li>
-                        <li><div class="weatherBlock"><p class="p1">Давление</p><p class="p2">1013 hpa</p></div></li>
-                        <li><div class="weatherBlock"><p class="p1">Влажность</p><p class="p2">52%</p></div></li>
-                        <li><div class="weatherBlock"><p class="p1">Координаты</p><p class="p2">[59.88 , 30.42]</p></div></li>
-                    </ul>
-                </div>
-                <div>
-                    <ul class="weatherData">
-                        <div class="hat">
-                            <h3 class="CityStyle">Moscow</h3>
-                            <p class="tempPsmall">8°C</p>
-                            <img class="imgClassSmall" src="https://img.icons8.com/material/96/000000/cloud--v1.png"></img>
-                            <button class="supreme">x</button>
-                        </div>
-                        <li><div class="weatherBlock"><p class="p1">Ветер</p><p class="p2">Modern</p></div></li>
-                        <li><div class="weatherBlock"><p class="p1">Облачность</p><p class="p2">Broken cloud</p></div></li>
-                        <li><div class="weatherBlock"><p class="p1">Давление</p><p class="p2">1013 hpa</p></div></li>
-                        <li><div class="weatherBlock"><p class="p1">Влажность</p><p class="p2">52%</p></div></li>
-                        <li><div class="weatherBlock"><p class="p1">Координаты</p><p class="p2">[59.88 , 30.42]</p></div></li>
-                    </ul>
-                </div>
-                <div>
-                    <ul class="weatherData">
-                        <div class="hat">
-                            <h3 class="CityStyle">Moscow</h3>
-                            <p class="tempPsmall">8°C</p>
-                            <img class="imgClassSmall" src="https://img.icons8.com/material/96/000000/cloud--v1.png"></img>
-                            <button class="supreme">x</button>
-                        </div>
-                        <li><div class="weatherBlock"><p class="p1">Ветер</p><p class="p2">Modern</p></div></li>
-                        <li><div class="weatherBlock"><p class="p1">Облачность</p><p class="p2">Broken cloud</p></div></li>
-                        <li><div class="weatherBlock"><p class="p1">Давление</p><p class="p2">1013 hpa</p></div></li>
-                        <li><div class="weatherBlock"><p class="p1">Влажность</p><p class="p2">52%</p></div></li>
-                        <li><div class="weatherBlock"><p class="p1">Координаты</p><p class="p2">[59.88 , 30.42]</p></div></li>
-                    </ul>
-                </div>
+                
             </div>
 
         </main>
-        <script src="js/newBlock.js"></script>
-        <script scr="js/deleteBlock.js"></script>
-        <script scr="js/weather.js"></script>
+        <script type="text/javascript" src="js/newBlock.js"></script>
+        <script type="text/javascript" scr="js/deleteBlock.js"></script>
+        <script type="text/javascript" scr="js/weather.js"></script>
     </body>
 </html>
 
