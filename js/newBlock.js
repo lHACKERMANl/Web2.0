@@ -42,6 +42,7 @@ request.onload = function() {
     } else {
       console.log("Error with api!");
       alert("Города нет. Прости(");
+      document.querySelector('.load').remove();
     }
   };
 request.send();
