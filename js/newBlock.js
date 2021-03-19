@@ -2,6 +2,17 @@ var request = new XMLHttpRequest();
 let ItemArray = [];
 let apiKey = "ebfa87e4d112fd5614094678d7b9224d";
 
+function search(ele) {
+  if(event.key === 'Enter') {
+      //alert(ele.value);  
+      addCode();      
+  }
+}
+
+function getRandomInt(max) {
+  return Math.floor(Math.random() * Math.floor(max));
+}
+
 function hideLoadingLayer(){
     //let new_city = document.getElementById("new_city");
     document.getElementById("loading_layer").style.visibility="hidden";
@@ -16,36 +27,49 @@ function deleteBlock(but){
 }
 
 function addCode() {
-  add_to_me.insertAdjacentHTML(`beforeend`,`<div class="load">Loading...</div>`); 
-  let new_city = document.getElementById("new_city");
-  let city = new_city.value;
-let url = new URL("https://api.openweathermap.org/data/2.5/weather?q="+city+"&appid="+apiKey+"&units=metric");
-
-request.open ("GET", url, true);
-
-request.onload = function() {
-    if (request.status >= 200 && request.status < 400) {
-      var data = JSON.parse(request.responseText);
-      //console.log(data);//imgClassBig
-      var imgSmall = `<img src="https://openweathermap.org/img/wn/${data.weather[0]['icon']}@2x.png"></img>`;
-      var weather__city = data.name;
-      var temperature = data.main.temp + "°C";
-      var humidity = data.main.humidity;
-      var wind_speed = data.wind.speed + "м/с";
-      var feels_like = data.main.feels_like + "°C";
-      var pressure = data.main.pressure;
-      var country = data.sys.country; //<img class="imgClassSmall" src="https://img.icons8.com/material/96/000000/cloud--v1.png"></img>
-      document.querySelector('.load').remove();
-      AddNewForm(temperature,imgSmall,humidity,wind_speed,feels_like,pressure,country,weather__city);
-      localStorage.setItem(weather__city, weather__city);
-      //ItemArray.push(weather__city)
-    } else {
-      console.log("Error with api!");
-      alert("Города нет. Прости(");
-      document.querySelector('.load').remove();
-    }
-  };
-request.send();
+  if(document.getElementById("new_city").value == ""){
+    alert("Введите город");
+  }
+  if(window.navigator.onLine == false)
+  {
+    alert("У вас есть интернет?");
+  }
+  if(window.navigator.onLine == true && document.getElementById("new_city").value != "")
+  {
+    add_to_me.insertAdjacentHTML(`beforeend`,`<div class="load">Loading...</div>`); 
+    let new_city = document.getElementById("new_city");
+    let city = new_city.value;
+    document.getElementById("new_city").value="";
+    let url = new URL("https://api.openweathermap.org/data/2.5/weather?q="+city+"&appid="+apiKey+"&units=metric");
+  
+    request.open ("GET", url, true);
+  
+    request.onload = function() {
+      if (request.status >= 200 && request.status < 400) {
+        var data = JSON.parse(request.responseText);
+        //console.log(data);//imgClassBig
+        var imgSmall = `<img src="https://openweathermap.org/img/wn/${data.weather[0]['icon']}@2x.png"></img>`;
+        var weather__city = data.name;
+        var temperature = data.main.temp + "°C";
+        var humidity = data.main.humidity;
+        var wind_speed = data.wind.speed + "м/с";
+        var feels_like = data.main.feels_like + "°C";
+        var pressure = data.main.pressure;
+        var id = data.sys.id;
+        var country = data.sys.country; //<img class="imgClassSmall" src="https://img.icons8.com/material/96/000000/cloud--v1.png"></img>
+        document.querySelector('.load').remove();
+        AddNewForm(temperature,imgSmall,humidity,wind_speed,feels_like,pressure,country,weather__city);
+        localStorage.setItem(getRandomInt(1000), weather__city);
+        //console.log(weather__city);
+        //ItemArray.push(weather__city)
+      } else {
+        console.log("Error with api!");
+        alert("Города нет. Прости(");
+        document.querySelector('.load').remove();
+      }
+    };
+    request.send();
+  }
     }
 
     function AddNewForm(temperature,imgSmall,humidity,wind_speed,feels_like,pressure,country,weather__city){
@@ -143,14 +167,15 @@ request.send();
   function autoLoad(){
     if(localStorage.length != 0){
       if(localStorage.length > count){
-        console.log(localStorage.key(count));
-        let curCity = localStorage.key(count)
+        //console.log(localStorage.key(count));
+        let curKey = localStorage.key(count);
+        let curCity = localStorage.getItem(curKey);
         addCodeNew(curCity);
         count++;
         autoLoad();
       }
       else{
-        console.log("X");
+        //console.log("X");
       }
     }
   }
@@ -158,7 +183,7 @@ request.send();
 
   function addCodeNew(city) {  
     var subRequest = new XMLHttpRequest();
-    console.log("test");
+    //console.log("test");
     let url = new URL("https://api.openweathermap.org/data/2.5/weather?q="+city+"&appid="+apiKey+"&units=metric");
   
     subRequest.open ("GET", url, true);
@@ -178,6 +203,7 @@ request.send();
         AddNewForm(temperature,imgSmall,humidity,wind_speed,feels_like,pressure,country,weather__city);
         //localStorage.setItem(weather__city, weather__city);
         //ItemArray.push(weather__city)
+        console.log(weather__city);
       } else {
         console.log("Error with api!");
         alert("Города нет. Прости(");
