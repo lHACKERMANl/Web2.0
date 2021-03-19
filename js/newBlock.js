@@ -15,7 +15,8 @@ function deleteBlock(but){
   elem.parentNode.removeChild(elem);
 }
 
-function addCode() {  
+function addCode() {
+  add_to_me.insertAdjacentHTML(`beforeend`,`<div class="load">Loading...</div>`); 
   let new_city = document.getElementById("new_city");
   let city = new_city.value;
 let url = new URL("https://api.openweathermap.org/data/2.5/weather?q="+city+"&appid="+apiKey+"&units=metric");
@@ -34,6 +35,7 @@ request.onload = function() {
       var feels_like = data.main.feels_like + "°C";
       var pressure = data.main.pressure;
       var country = data.sys.country; //<img class="imgClassSmall" src="https://img.icons8.com/material/96/000000/cloud--v1.png"></img>
+      document.querySelector('.load').remove();
       AddNewForm(temperature,imgSmall,humidity,wind_speed,feels_like,pressure,country,weather__city);
       localStorage.setItem(weather__city, weather__city);
       //ItemArray.push(weather__city)
