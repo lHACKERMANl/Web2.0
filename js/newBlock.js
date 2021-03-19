@@ -58,8 +58,9 @@ function addCode() {
         var id = data.sys.id;
         var country = data.sys.country; //<img class="imgClassSmall" src="https://img.icons8.com/material/96/000000/cloud--v1.png"></img>
         document.querySelector('.load').remove();
-        AddNewForm(temperature,imgSmall,humidity,wind_speed,feels_like,pressure,country,weather__city);
-        localStorage.setItem(getRandomInt(1000), weather__city);
+        var RandomId = getRandomInt(1000);
+        localStorage.setItem(RandomId, weather__city);
+        AddNewForm(temperature,imgSmall,humidity,wind_speed,feels_like,pressure,country,RandomId);
         //console.log(weather__city);
         //ItemArray.push(weather__city)
       } else {
@@ -77,7 +78,7 @@ function addCode() {
       <div id="`+weather__city+`">
       <ul class="weatherData">
       <div class="hat">
-      <h3 class="CityStyle">`+weather__city+`</h3>
+      <h3 class="CityStyle">`+localStorage.getItem(weather__city)+`</h3>
       <p class="tempPsmall">`+temperature+`</p>
       `+imgSmall+`
       <button onclick="deleteBlock(this)" id="`+weather__city+`" class="supreme">x</button>
@@ -170,7 +171,7 @@ function addCode() {
         //console.log(localStorage.key(count));
         let curKey = localStorage.key(count);
         let curCity = localStorage.getItem(curKey);
-        addCodeNew(curCity);
+        addCodeNew(curKey, curCity);
         count++;
         autoLoad();
       }
@@ -181,7 +182,7 @@ function addCode() {
   }
 
 
-  function addCodeNew(city) {  
+  function addCodeNew(key, city) {  
     var subRequest = new XMLHttpRequest();
     //console.log("test");
     let url = new URL("https://api.openweathermap.org/data/2.5/weather?q="+city+"&appid="+apiKey+"&units=metric");
@@ -199,8 +200,9 @@ function addCode() {
         var wind_speed = data.wind.speed + "м/с";
         var feels_like = data.main.feels_like + "°C";
         var pressure = data.main.pressure;
+        var RandomId = key;
         var country = data.sys.country; //<img class="imgClassSmall" src="https://img.icons8.com/material/96/000000/cloud--v1.png"></img>
-        AddNewForm(temperature,imgSmall,humidity,wind_speed,feels_like,pressure,country,weather__city);
+        AddNewForm(temperature,imgSmall,humidity,wind_speed,feels_like,pressure,country,RandomId);
         //localStorage.setItem(weather__city, weather__city);
         //ItemArray.push(weather__city)
         console.log(weather__city);
