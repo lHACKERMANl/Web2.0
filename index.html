@@ -6,17 +6,17 @@
         <link rel="stylesheet" type="text/css" href="mobile.css">
         <link rel="stylesheet" type="text/css" href="smallScreen.css">
     </head>
-    <body onload="autoLoad();">
+    <body id="auto" onload="autoLoad()">
         <header class="wrapper">
             <div><h1 class="h1New">Погода здесь</h1></div>
-            <div><button onclick="UpdateLocation()" class="butDesign">Обновить геолокацию</button></div>
+            <div><button id="Update" class="butDesign">Обновить геолокацию</button></div>
         </header>
         <main>
             <div class="grid" id="add_to_me">
                 <div>
                     <h3 class="cur_weather__city"></h3>
 
-                    <div onload="hideLoadingLayer();" id="loading_layer" class="imgClassBig">Loading...</div> <!--src="https://img.icons8.com/material/96/000000/cloud--v1.png"-->
+                    <div id="loading_layer" class="imgClassBig">Loading...</div> <!--src="https://img.icons8.com/material/96/000000/cloud--v1.png"-->
                     <p class="tempP"></p>
                 </div>
                 <div>
@@ -34,7 +34,7 @@
                 </div>
                 <div class="rghtCentringToRight">
                         <input type="text" id="new_city" onkeydown="search(this)" placeholder="Добавить новый город" size="40">
-                        <button onclick="addCode()">+</button>                
+                        <button id="add">+</button>                
                     </div>
             </div>
             <div class="grid">

@@ -36,62 +36,87 @@ function addCode() {
   }
   if(window.navigator.onLine == true && document.getElementById("new_city").value != "")
   {
-    add_to_me.insertAdjacentHTML(`beforeend`,`<div class="load">Loading...</div>`); 
-    let new_city = document.getElementById("new_city");
-    let city = new_city.value;
-    document.getElementById("new_city").value="";
-    let url = new URL("https://api.openweathermap.org/data/2.5/weather?q="+city+"&appid="+apiKey+"&units=metric");
-  
-    request.open ("GET", url, true);
-  
-    request.onload = function() {
-      if (request.status >= 200 && request.status < 400) {
-        var data = JSON.parse(request.responseText);
-        //console.log(data);//imgClassBig
-        var imgSmall = `<img src="https://openweathermap.org/img/wn/${data.weather[0]['icon']}@2x.png"></img>`;
-        var weather__city = data.name;
-        var temperature = data.main.temp + "°C";
-        var humidity = data.main.humidity;
-        var wind_speed = data.wind.speed + "м/с";
-        var feels_like = data.main.feels_like + "°C";
-        var pressure = data.main.pressure;
-        var id = data.sys.id;
-        var country = data.sys.country; //<img class="imgClassSmall" src="https://img.icons8.com/material/96/000000/cloud--v1.png"></img>
-        document.querySelector('.load').remove();
-        var RandomId = getRandomInt(1000);
-        localStorage.setItem(RandomId, weather__city);
-        AddNewForm(temperature,imgSmall,humidity,wind_speed,feels_like,pressure,country,RandomId);
-        //console.log(weather__city);
-        //ItemArray.push(weather__city)
-      } else {
-        console.log("Error with api!");
-        alert("Города нет. Прости(");
-        document.querySelector('.load').remove();
-      }
-    };
-    request.send();
+    try
+    {
+
+      add_to_me.insertAdjacentHTML(`beforeend`,`<div class="load">Loading...</div>`); 
+      let new_city = document.getElementById("new_city");
+      let city = new_city.value;
+      document.getElementById("new_city").value="";
+      let url = new URL("https://api.openweathermap.org/data/2.5/weather?q="+city+"&appid="+apiKey+"&units=metric");
+    
+      request.open ("GET", url, true);
+    
+      request.onload = function() {
+        if (request.status >= 200 && request.status < 400) {
+          var data = JSON.parse(request.responseText);
+          //console.log(data);//imgClassBig
+          var imgSmall = `<img src="https://openweathermap.org/img/wn/${data.weather[0]['icon']}@2x.png"></img>`;
+          var weather__city = data.name;
+          var temperature = data.main.temp + "°C";
+          var humidity = data.main.humidity;
+          var wind_speed = data.wind.speed + "м/с";
+          var feels_like = data.main.feels_like + "°C";
+          var pressure = data.main.pressure;
+          var id = data.sys.id;
+          var country = data.sys.country; //<img class="imgClassSmall" src="https://img.icons8.com/material/96/000000/cloud--v1.png"></img>
+          document.querySelector('.load').remove();
+          var RandomId = getRandomInt(1000);
+          localStorage.setItem(RandomId, weather__city);
+          AddNewForm(temperature,imgSmall,humidity,wind_speed,feels_like,pressure,country,RandomId);
+          //console.log(weather__city);
+          //ItemArray.push(weather__city)
+        } else {
+          console.log("Error with api!");
+          alert("Города нет. Прости(");
+          document.querySelector('.load').remove();
+        }
+      };
+
+      request.onreadystatechange=function() {
+        if (request.readyState === 4){   
+            if(request.status === 200){ 
+                //success
+            } else {
+                alert("Не выключайте интернет ( \nКотята грустят ((("); 
+                document.querySelector('.load').remove();
+            }
+        } 
+    }    
+
+      request.send();
+
+    }catch(exception){
+        alert('There was a network error.');
+    }
   }
     }
 
     function AddNewForm(temperature,imgSmall,humidity,wind_speed,feels_like,pressure,country,weather__city){
-      add_to_me.insertAdjacentHTML('beforeend',` 
-      <div id="`+weather__city+`">
-      <ul class="weatherData">
-      <div class="hat">
-      <h3 class="CityStyle">`+localStorage.getItem(weather__city)+`</h3>
-      <p class="tempPsmall">`+temperature+`</p>
-      `+imgSmall+`
-      <button onclick="deleteBlock(this)" id="`+weather__city+`" class="supreme">x</button>
-      </div>
-      <li><div class="weatherBlock"><p class="p1">Влажность</p><p class="p2">`+humidity+`</p></div></li>
-      <li><div class="weatherBlock"><p class="p1">Скорость ветра</p><p class="p2">`+wind_speed+`</p></div></li>
-      <li><div class="weatherBlock"><p class="p1">Чувствуется как</p><p class="p2">`+feels_like+`</p></div></li>
-      <li><div class="weatherBlock"><p class="p1">Давление</p><p class="p2">`+pressure+`</p></div></li>
-      <li><div class="weatherBlock"><p class="p1">Страна</p><p class="p2">`+country+`</p></div></li>
-      </ul>
-      </div>
-  
-  `);
+      try{
+        add_to_me.insertAdjacentHTML('beforeend',` 
+        <div id="`+weather__city+`">
+        <ul class="weatherData">
+        <div class="hat">
+        <h3 class="CityStyle">`+localStorage.getItem(weather__city)+`</h3>
+        <p class="tempPsmall">`+temperature+`</p>
+        `+imgSmall+`
+        <button onclick="deleteBlock(this)" id="`+weather__city+`" class="supreme">x</button>
+        </div>
+        <li><div class="weatherBlock"><p class="p1">Влажность</p><p class="p2">`+humidity+`</p></div></li>
+        <li><div class="weatherBlock"><p class="p1">Скорость ветра</p><p class="p2">`+wind_speed+`</p></div></li>
+        <li><div class="weatherBlock"><p class="p1">Чувствуется как</p><p class="p2">`+feels_like+`</p></div></li>
+        <li><div class="weatherBlock"><p class="p1">Давление</p><p class="p2">`+pressure+`</p></div></li>
+        <li><div class="weatherBlock"><p class="p1">Страна</p><p class="p2">`+country+`</p></div></li>
+        </ul>
+        </div>
+    
+    `);
+      }catch(exception){
+        if(exception.name == 'NetworkError'){
+          alert('There was a network error.');
+       }
+      }
     }
     
     if (!navigator.geolocation) 
@@ -119,26 +144,41 @@ function addCode() {
     )
 
     function GetMainData(url){
+      try
+      {
         request.open ("GET", url, true);
 
-            request.onload = function() {
-                if (request.status >= 200 && request.status < 400) {
-                  var data = JSON.parse(request.responseText);
-                  //console.log(data);//imgClassBig
-                  document.querySelector('.imgClassBig').innerHTML = `<img src="https://openweathermap.org/img/wn/${data.weather[0]['icon']}@2x.png"></img>`;
-                  document.querySelector('.cur_weather__city').textContent = data.name;
-                  document.querySelector('.tempP').innerHTML = data.main.temp + "°C";
-                  document.querySelector('.cur_first').innerHTML = data.main.humidity;
-                  document.querySelector('.wind_speed').innerHTML = data.wind.speed + "м/с";
-                  document.querySelector('.cur_feels_like').innerHTML = data.main.feels_like + "°C";
-                  document.querySelector('.cur_pressure').innerHTML = data.main.pressure;
-                  document.querySelector('.cur_country').innerHTML = data.sys.country;
+        request.onload = function() {
+            if (request.status >= 200 && request.status < 400) {
+              var data = JSON.parse(request.responseText);
+              //console.log(data);//imgClassBig
+              document.querySelector('.imgClassBig').innerHTML = `<img src="https://openweathermap.org/img/wn/${data.weather[0]['icon']}@2x.png"></img>`;
+              document.querySelector('.cur_weather__city').textContent = data.name;
+              document.querySelector('.tempP').innerHTML = data.main.temp + "°C";
+              document.querySelector('.cur_first').innerHTML = data.main.humidity;
+              document.querySelector('.wind_speed').innerHTML = data.wind.speed + "м/с";
+              document.querySelector('.cur_feels_like').innerHTML = data.main.feels_like + "°C";
+              document.querySelector('.cur_pressure').innerHTML = data.main.pressure;
+              document.querySelector('.cur_country').innerHTML = data.sys.country;
+            } else {
+              console.log("Error with api!");
+            }
+          };
+
+          request.onreadystatechange=function() {
+            if (request.readyState === 4){  
+                if(request.status === 200){ 
+                    //success
                 } else {
-                  console.log("Error with api!");
+                  alert("Не выключайте интернет ( \n Котята грустят ((("); 
                 }
-              };
-              
-        request.send();
+            } 
+        }    
+          
+    request.send();
+      }catch(exception){
+          alert('There was a network error.');
+      }
     }
 
 
@@ -211,5 +251,28 @@ function addCode() {
         alert("Города нет. Прости(");
       }
     };
+
     subRequest.send();
+  }
+
+  try
+  {
+
+    let autoLoadVar = document.getElementById("auto");
+    window.addEventListener("load", autoLoad);
+  
+    let updateVar = document.getElementById("Update");
+    updateVar.addEventListener("click",UpdateLocation);
+  
+    let addVar = document.getElementById("add");
+    addVar.addEventListener("click", addCode);
+  
+    let loadHideVar = document.getElementById("loading_layer");
+    loadHideVar.addEventListener("load", hideLoadingLayer);
+  
+    let keyVar = document.getElementById("new_city");
+    document.addEventListener("keydown", search(keyVar));
+
+  }catch(e){
+    console.log(e);
   }
