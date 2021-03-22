@@ -237,7 +237,7 @@ function addCode() {
         //console.log(data);//imgClassBig
         var imgSmall = `<img src="https://openweathermap.org/img/wn/${data.weather[0]['icon']}@2x.png"></img>`;
         var weather__city = data.name;
-        var temperature = data.main.temp + "°C";
+        var temperature = data.main.temp.toFixed() + "°C";
         var humidity = data.main.humidity;
         var wind_speed = data.wind.speed + "м/с";
         var feels_like = data.main.feels_like + "°C";
