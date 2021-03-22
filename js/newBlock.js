@@ -2,7 +2,7 @@ var request = new XMLHttpRequest();
 let ItemArray = [];
 let apiKey = "ebfa87e4d112fd5614094678d7b9224d";
 
-function search(ele) {
+function search() {
   if(event.key === 'Enter') {
       //alert(ele.value);  
       addCode();      
@@ -78,8 +78,10 @@ function addCode() {
             if(request.status === 200){ 
                 //success
             } else {
-                alert("Не выключайте интернет ( \nКотята грустят ((("); 
-                document.querySelector('.load').remove();
+                if (!navigator.onLine){
+                  alert("Не выключайте интернет ( \nКотята грустят ((("); 
+                  document.querySelector('.load').remove();
+                }
             }
         } 
     }    
@@ -271,7 +273,7 @@ function addCode() {
     loadHideVar.addEventListener("load", hideLoadingLayer);
   
     let keyVar = document.getElementById("new_city");
-    document.addEventListener("keydown", search(keyVar));
+    document.addEventListener("keydown", search);
 
   }catch(e){
     console.log(e);
