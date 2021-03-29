@@ -65,7 +65,7 @@ function addCode() {
           localStorage.setItem(RandomId, weather__city);
           AddNewForm(temperature,imgSmall,humidity,wind_speed,feels_like,pressure,country,RandomId);
           //console.log(weather__city);
-          //ItemArray.push(weather__city)
+          ItemArray.push(weather__city)
         } else {
           console.log("Error with api!");
           alert("Города нет. Прости(");
