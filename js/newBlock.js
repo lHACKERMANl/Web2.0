@@ -61,9 +61,17 @@ function addCode() {
           var id = data.sys.id;
           var country = data.sys.country; //<img class="imgClassSmall" src="https://img.icons8.com/material/96/000000/cloud--v1.png"></img>
           document.querySelector('.load').remove();
-          var RandomId = getRandomInt(1000);
-          localStorage.setItem(RandomId, weather__city);
-          AddNewForm(temperature,imgSmall,humidity,wind_speed,feels_like,pressure,country,RandomId);
+          if(id in localStorage)
+            {
+              console.log("Error with api!");
+              alert("Города повторился.");
+              document.querySelector('.load').remove();
+            }
+          else
+            {
+              localStorage.setItem(id, weather__city);
+            }
+          AddNewForm(temperature,imgSmall,humidity,wind_speed,feels_like,pressure,country,id);
           //console.log(weather__city);
           ItemArray.push(weather__city)
         } else {
@@ -242,9 +250,9 @@ function addCode() {
         var wind_speed = data.wind.speed + "м/с";
         var feels_like = data.main.feels_like + "°C";
         var pressure = data.main.pressure;
-        var RandomId = key;
+        var id = key;
         var country = data.sys.country; //<img class="imgClassSmall" src="https://img.icons8.com/material/96/000000/cloud--v1.png"></img>
-        AddNewForm(temperature,imgSmall,humidity,wind_speed,feels_like,pressure,country,RandomId);
+        AddNewForm(temperature,imgSmall,humidity,wind_speed,feels_like,pressure,country,id);
         //localStorage.setItem(weather__city, weather__city);
         //ItemArray.push(weather__city)
         console.log(weather__city);
